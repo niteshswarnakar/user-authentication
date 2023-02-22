@@ -6,6 +6,7 @@ const token_key = "nitesh";
 
 export default async function signin(req, res) {
   // check if email exists
+  console.log("email - ", req.body.email);
   const user = await User.findOne({ email: req.body.email });
   console.log({ user });
   if (!user) res.status(400).json({ message: "email doesn't exist ok" });
@@ -22,7 +23,7 @@ export default async function signin(req, res) {
       const token = jwt.sign({ _id: user._id, email: user.email }, token_key);
 
       //return the token as the response
-      res.status(200).json({ token });
+      res.status(200).json({ email: req.body.email, token });
     }
   }
 }
