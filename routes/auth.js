@@ -1,5 +1,7 @@
 import express from "express";
 import User from "../models/user.js";
+import signup from "../controllers/signup.js";
+import signin from "../controllers/signin.js";
 
 const router = express.Router();
 
@@ -8,8 +10,7 @@ router.get("/", async (req, res) => {
   res.status(200).json({ users });
 });
 
-router.get("/demo", (req, res) => {
-  res.json({ demo: "demo" });
-});
+router.post("/signup", signup);
+router.post("/signin", signin);
 
 export default router;
