@@ -1,5 +1,9 @@
 POST http://localhost:8000/api/users/signin
+
 {
-    "email":"david@gmail.com",
-    "password":"random4545#"
+    "email":"nitu@gmail.comnm",
+    "password":"Random4545#"
 }
+
+###
+GET http://localhost:8000/api/users
