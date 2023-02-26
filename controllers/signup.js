@@ -30,7 +30,7 @@ export default async function signup(req, res) {
       console.log({ token });
       res.status(200).json({ email: saveUser.email, token });
     } catch (err) {
-      console.log(err);
+      console.log(err.message);
     }
   }
 }
